@@ -38,7 +38,7 @@ function handleClick() {
     // Section 11.5.4 Use the "If" Statement
     if (date) {
       // Apply `filter` to the table data to only keep the
-      // rows where the `datetime` value matches the filter value
+      // rows where the `input-date` value matches the filter value
       filteredData = filteredData.filter(row => row.datetime === date);
     };
     
