@@ -34,10 +34,10 @@ function updateFilters() {
 
    // Save the element, value, and id of the filter that was changed
    let date = d3.select("#datetime").property("value");
-   //let city = d3.select("#input_city").property("value");
-   //let state = d3.select("#input_state").property("value");
-   //let county = d3.select("#input_country").property("value");
-   //let shape = d3.select("#input_shape").property("value");
+   let city = d3.select("#city").property("value");
+   let state = d3.select("#state").property("value");
+   let country = d3.select("#country").property("value");
+   let shape = d3.select("#shape").property("value");
 
   // If a filter value was entered then add that filterId and value
   // to the filters list. Otherwise, clear that filter from the filters object
@@ -56,18 +56,18 @@ function updateFilters() {
   if (date) {
     filteredData = filteredData.filter(row => row.datetime === date);
   };
-  //if (city) {
-  //  filteredData = filteredData.filter(row => row.input_city === city);
-  //};
-  //if (state) {
-  //  filteredData = filteredData.filter(row => row.input_state === state);
-  //};
-  //if (country) {
-  //  filteredData = filteredData.filter(row => row.input_county === country);
-  //};
-  //if (shape) {
-  //  filteredData = filteredData.filter(row => row.input_shape === shape);
-  //};  
+  if (city) {
+     filteredData = filteredData.filter(row => row.city === city);
+  };
+  if (state) {
+    filteredData = filteredData.filter(row => row.state === state);
+  };
+  if (country) {
+    filteredData = filteredData.filter(row => row.country === country);
+  };
+  if (shape) {
+    filteredData = filteredData.filter(row => row.shape === shape);
+  };  
 
   // Finally, rebuild the table using the filtered Data
   buildTable(filteredData);
